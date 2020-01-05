@@ -23,7 +23,6 @@ class SelectionViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.alpha = 0.65
-        
         return imageView
     }()
     
@@ -34,8 +33,6 @@ class SelectionViewController: UIViewController {
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-//        label.alpha = 1
-        
         return label
     }()
     
@@ -47,8 +44,55 @@ class SelectionViewController: UIViewController {
         view.layer.borderWidth = 1
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = #colorLiteral(red: 0.652284264, green: 0.652284264, blue: 0.652284264, alpha: 0.1952054795)
-        
         return view
+    }()
+    
+    let softButton :  CustomButton = {
+        let button = CustomButton()
+        button.layer.cornerRadius = 20
+        button.layer.masksToBounds = true
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.black.cgColor
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("SOFT", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Chalkduster", size: 23)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.652284264, green: 0.652284264, blue: 0.652284264, alpha: 0.1952054795)
+        button.tag = 0
+        button.addTarget(self, action: #selector(selectionButtonTapped(_:)), for: .touchUpInside)
+        return button
+    }()
+    
+    let mediumButton : CustomButton = {
+        let button = CustomButton()
+        button.layer.cornerRadius = 20
+        button.layer.masksToBounds = true
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.black.cgColor
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("MEDIUM", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Chalkduster", size: 23)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.652284264, green: 0.652284264, blue: 0.652284264, alpha: 0.1952054795)
+        button.tag = 1
+        button.addTarget(self, action: #selector(selectionButtonTapped(_:)), for: .touchUpInside)
+        return button
+    }()
+
+    let hardButton : CustomButton = {
+        let button = CustomButton()
+        button.layer.cornerRadius = 20
+        button.layer.masksToBounds = true
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.black.cgColor
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("HARD", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Chalkduster", size: 23)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.652284264, green: 0.652284264, blue: 0.652284264, alpha: 0.1952054795)
+        button.tag = 2
+        button.addTarget(self, action: #selector(selectionButtonTapped(_:)), for: .touchUpInside)
+        return button
     }()
     
     private func setupLayouts() {
@@ -69,7 +113,32 @@ class SelectionViewController: UIViewController {
         labelContainer.heightAnchor.constraint(equalToConstant: 110).isActive = true
         labelContainer.topAnchor.constraint(equalTo: view.topAnchor, constant: 210).isActive = true
         labelContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        view.addSubview(softButton)
+        softButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        softButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
+        softButton.topAnchor.constraint(equalTo: labelContainer.bottomAnchor, constant: 100).isActive = true
+        softButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        view.addSubview(mediumButton)
+        mediumButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        mediumButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
+        mediumButton.topAnchor.constraint(equalTo: softButton.bottomAnchor, constant: 40).isActive = true
+        mediumButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        view.addSubview(hardButton)
+        hardButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        hardButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
+        hardButton.topAnchor.constraint(equalTo: mediumButton.bottomAnchor, constant: 40).isActive = true
+        hardButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 
+    }
+    
+    @objc
+    private func selectionButtonTapped(_ sender : UIButton) {
+        let vc = ClockViewController()
+        vc.senderTag = sender.tag
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3465BEAF23C272F5006A02F5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3465BEAE23C272F5006A02F5 /* CustomButton.swift */; };
+		3465BEB123C28AE1006A02F5 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3465BEB023C28AE1006A02F5 /* ClockViewController.swift */; };
 		34BB5E2023C11F35001ED889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BB5E1F23C11F35001ED889 /* AppDelegate.swift */; };
 		34BB5E2223C11F35001ED889 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BB5E2123C11F35001ED889 /* SelectionViewController.swift */; };
 		34BB5E2723C11F36001ED889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BB5E2623C11F36001ED889 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3465BEAE23C272F5006A02F5 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		3465BEB023C28AE1006A02F5 /* ClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		34BB5E1C23C11F35001ED889 /* EggChallenge Programatically.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EggChallenge Programatically.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BB5E1F23C11F35001ED889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BB5E2123C11F35001ED889 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				34BB5E2123C11F35001ED889 /* SelectionViewController.swift */,
+				3465BEB023C28AE1006A02F5 /* ClockViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -82,6 +87,7 @@
 		34BB5E3323C11F62001ED889 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3465BEAE23C272F5006A02F5 /* CustomButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +171,8 @@
 			files = (
 				34BB5E2223C11F35001ED889 /* SelectionViewController.swift in Sources */,
 				34BB5E2023C11F35001ED889 /* AppDelegate.swift in Sources */,
+				3465BEAF23C272F5006A02F5 /* CustomButton.swift in Sources */,
+				3465BEB123C28AE1006A02F5 /* ClockViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
