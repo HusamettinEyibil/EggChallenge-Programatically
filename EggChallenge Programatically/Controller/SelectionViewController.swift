@@ -12,9 +12,15 @@ class SelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setupLayouts()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
     }
     
     let bgImageView : UIImageView = {
@@ -138,6 +144,7 @@ class SelectionViewController: UIViewController {
     private func selectionButtonTapped(_ sender : UIButton) {
         let vc = ClockViewController()
         vc.senderTag = sender.tag
+        vc.view.backgroundColor = .white
         navigationController?.pushViewController(vc, animated: true)
     }
     
